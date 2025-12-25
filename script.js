@@ -1,6 +1,6 @@
 
-console.log("SCRIPT IS RUNNING");
 // Only load visual edit scripts when inside an iframe
+        console.log("SCRIPT IS RUNNING");
         if (window.self !== window.top) {
           // Load debug monitor script
           var debugMonitorScript = document.createElement('script');
@@ -45,6 +45,7 @@ form.addEventListener("submit", async (e) => {
     alert("Error: " + (result.error || "Something went wrong"));
   }
 });
+
 
 
 
