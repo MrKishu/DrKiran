@@ -19,7 +19,7 @@
           document.head.appendChild(tailwindScript);
         }
 
-const form = document.getElementById("contactForm");
+const form = document.getElementById("contact-form");
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault(); // stop page reload
@@ -45,6 +45,7 @@ form.addEventListener("submit", async (e) => {
     alert("Error: " + (result.error || "Something went wrong"));
   }
 });
+
 
 
 
