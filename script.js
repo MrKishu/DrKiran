@@ -19,3 +19,31 @@
           document.head.appendChild(tailwindScript);
         }
 
+const form = document.getElementById("contactForm");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault(); // stop page reload
+
+  const formData = new FormData(form);
+  const data = {
+    name: formData.get("name"),
+    email: formData.get("email"),
+    subject: formData.get("subject"),
+    message: formData.get("message")
+  };
+
+  const res = await fetch("/api/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  });
+
+  const result = await res.json();
+  if (result.success) {
+    alert("Message sent!");
+  } else {
+    alert("Error: " + (result.error || "Something went wrong"));
+  }
+});
+
+
