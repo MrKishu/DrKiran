@@ -32,7 +32,7 @@ form.addEventListener("submit", async (e) => {
     message: formData.get("message")
   };
 
-  const res = await fetch("/api/contact", {
+  const res = await fetch("https://api-backend-api.vercel.app/api/contact", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data)
@@ -45,5 +45,6 @@ form.addEventListener("submit", async (e) => {
     alert("Error: " + (result.error || "Something went wrong"));
   }
 });
+
 
 
